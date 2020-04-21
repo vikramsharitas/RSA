@@ -23,7 +23,6 @@ void RSA::encryption_key(long long int &e, long long int &d)
         if (gcd(e, phi) == 1)
         {
             d = cd(e);
-            cout << e << "\t" << d << endl;
             return;
         }
     }
@@ -61,7 +60,6 @@ void RSA::RSAencrypt(const long long int& e, string msg, vector<long long int> &
             k *= pt;
             k %= n;
         }
-        //cout << k << "\t";
         en.push_back(k);
         i++;
     }
@@ -86,9 +84,9 @@ void RSA::RSAdecrypt(const long long int& d, vector<long long int>& en, string& 
         m.push_back(k);
         i++;
     }
-    //cout << endl;
 }
 
+//Constructor. Pass file name to constructor.
 RSA::RSA(string file)
 {
     fstream f;
