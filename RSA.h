@@ -19,7 +19,12 @@ private:
 
 public:
 	RSA(string file);
+	//RSA(long long int);
 	void encryption_key(long long int& e, long long int& d);
 	void RSAencrypt(const long long int& e, string msg, vector<long long int>& en);
 	void RSAdecrypt(const long long int& d, vector<long long int>& en, string& m);
 };
+
+vector<long long int> RSAEncrypt(string &file, long long int &e, string &msg);
+
+string RSADecrypt(string& file, long long int& d, vector<long long int>& en);
